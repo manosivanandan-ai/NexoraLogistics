@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
-import { operationalMetrics, enquiryVolumeData, resolutionTimeData } from '../data/metrics';
+import { enquiryVolumeData, resolutionTimeData } from '../data/metrics';
 
 function useAnimatedValue(target: number, active: boolean, duration = 2000) {
   const [value, setValue] = useState(0);

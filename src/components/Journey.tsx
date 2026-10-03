@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 
 const stages = [
   {

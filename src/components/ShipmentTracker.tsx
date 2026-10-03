@@ -31,8 +31,6 @@ export default function ShipmentTracker({ isOpen, onClose }: ShipmentTrackerProp
   const [loading, setLoading] = useState(false);
   const [shipment, setShipment] = useState<Shipment | null>(null);
   const [error, setError] = useState('');
-  const [dotPosition, setDotPosition] = useState(0.5);
-
   const handleTrack = async () => {
     if (!trackId.trim()) { setError('Enter a shipment ID'); return; }
     setLoading(true);
@@ -42,8 +40,6 @@ export default function ShipmentTracker({ isOpen, onClose }: ShipmentTrackerProp
       const result = await getShipment(trackId.trim());
       if (result) {
         setShipment(result);
-        const completed = result.milestones.filter((m) => m.status === 'completed').length;
-        setDotPosition(completed / (result.milestones.length - 1));
       } else {
         setError(`No shipment found for "${trackId}". Try NX-48291.`);
       }
